@@ -8,7 +8,7 @@ export default function RootLayout() {
   return (
     <QueryProvider>
       <ToastProvider>
-        <StatusBar translucent backgroundColor={'transparent'} barStyle="light-content" />
+        <StatusBar translucent backgroundColor={'transparent'} barStyle="dark-content" />
         <Stack screenOptions={{ headerShown: false }} />
       </ToastProvider>
     </QueryProvider>

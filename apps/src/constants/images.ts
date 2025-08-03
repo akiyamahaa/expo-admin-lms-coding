@@ -4,6 +4,8 @@ import onboarding2 from '@/assets/images/onboarding2.png'
 import bgAuth from '@/assets/images/bg-auth.png'
 import BannerHome from '@/assets/images/banner-home.png'
 import bgPractice from '@/assets/images/bg-practice.png'
+import bgProgress from '@/assets/images/bg-progress.png'
+
 import bgPlayChess from '@/assets/images/bg-play-chess.png'
 import iconHuman from '@/assets/images/icon-human.png'
 import logoApp from '@/assets/images/logo-app.png'
@@ -12,6 +14,8 @@ import bgChoiCo from '@/assets/images/bg-choi-co.png'
 import vua from '@/assets/images/vua.png'
 import hau from '@/assets/images/hau.png'
 import defaultImage from '@/assets/images/default.png'
+import lessonDetail from '@/assets/images/lesson-detail.png'
+
 import quizSuccess from '@/assets/images/result-quiz/success.png'
 import quizUnSuccess from '@/assets/images/result-quiz/un-success.png'
 import quizStart from '@/assets/images/bg-quiz-start.png'
@@ -40,6 +44,7 @@ export default {
   rankDiamond,
   rankGold,
   bgChoiCo,
+  bgProgress,
   rankPlatinum,
   rankSliver,
   iconSupport,
@@ -58,6 +63,7 @@ export default {
   quizUnSuccess,
   quizStart,
   defaultImage,
+  lessonDetail,
   rank1,
   rank2,
   rank3,

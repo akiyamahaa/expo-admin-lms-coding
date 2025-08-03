@@ -68,7 +68,7 @@ const SignIn = () => {
     >
       <View className="justify-center bg-[#FFFFFF7A] border border-[#FFFFFF7A] p-6 w-11/12 rounded-3xl pt-[114px] pb-12">
         <View className="items-center mb-6">
-          <Image source={images.logoApp} className="h-[80px] w-[80px]" />
+          <Image source={images.logoApp} className="w-[168px]" />
         </View>
         <Text className="text-3xl font-bold mb-3 text-center">Đăng nhập</Text>
         <Text className="text-sm text-[#64748B] mb-8 text-center">
@@ -134,7 +134,7 @@ const SignIn = () => {
         <Pressable
           onPress={handleSubmit(onSubmit)}
           disabled={loading}
-          className={`bg-[#885BF0] h-12 py-3 rounded-xl ${loading ? 'opacity-50' : ''}`}
+          className={`bg-primary-main h-12 py-3 rounded-xl ${loading ? 'opacity-50' : ''}`}
         >
           <Text className="text-white text-center text-base font-semibold">
             {loading ? 'Đăng nhập...' : 'Đăng nhập'}
@@ -143,7 +143,7 @@ const SignIn = () => {
 
         <Pressable onPress={() => router.push(ERouteTable.SIGIN_UP)}>
           <Text className="text-center text-sm text-[#6B7280] mt-6">
-            Bạn chưa có tài khoản? <Text className="font-semibold text-[#885BF0]">Đăng ký</Text>
+            Bạn chưa có tài khoản? <Text className="font-semibold text-primary-main">Đăng ký</Text>
           </Text>
         </Pressable>
       </View>

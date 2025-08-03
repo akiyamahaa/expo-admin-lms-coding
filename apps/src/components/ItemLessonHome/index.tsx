@@ -31,11 +31,13 @@ interface IItemLessonHomeProps {
 }
 
 export default function ItemLessonHome({ data, onPress }: IItemLessonHomeProps) {
+  console.log('🚀 ~ ItemLessonHome ~ data:', data)
+
   return (
     <Pressable
       style={{ width: Dimensions.get('window').width / 2 - 30 }}
       onPress={onPress}
-      className={`bg-[#64748B14] mb-3 rounded-2xl ${data.isLocked ? 'opacity-[48%]' : ''}`}
+      className={`bg-white mb-3 rounded-2xl ${data.isLocked ? 'opacity-[48%]' : ''}`}
     >
       <View className="flex-col items-center">
         <View>
@@ -62,8 +64,8 @@ export default function ItemLessonHome({ data, onPress }: IItemLessonHomeProps) 
             {data.isCompleted ? <IconCheckActive /> : <IconCheck />}
           </View>
         </View>
-        <View className="flex-col items-start justify-start w-full px-4 mb-2 mt-2">
-          <Text className="text-[#E77828] text-start capitalize w-full">
+        <View className="flex-col items-start justify-start w-full px-4 my-2 gap-1">
+          <Text className="text-[#E77828] text-start capitalize w-full" numberOfLines={2}>
             {data?.category?.title}
           </Text>
           <Text className="text-[#1E293B] font-semibold my-1" numberOfLines={1}>
@@ -71,7 +73,7 @@ export default function ItemLessonHome({ data, onPress }: IItemLessonHomeProps) 
           </Text>
           <View className="flex-row justify-between items-center w-full">
             <Text>Điểm</Text>
-            <Text className="text-base text-[#734DBE] font-semibold">
+            <Text className="text-base text-primary-main font-semibold">
               {data?.score?.score || 0}
               <Text className="font-normal">/{data?.score?.totalScore || 100}</Text>
             </Text>

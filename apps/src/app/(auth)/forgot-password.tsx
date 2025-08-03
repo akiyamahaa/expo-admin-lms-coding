@@ -52,7 +52,7 @@ const ForgotPassword = () => {
     >
       <View className="justify-center bg-[#FFFFFF7A] border border-[#FFFFFF7A] p-6 w-11/12 rounded-3xl pt-[114px] pb-12">
         <View className="items-center mb-6">
-          <Image source={images.logoApp} className="h-[80px] w-[80px]" />
+          <Image source={images.logoApp} className="w-[168px]" />
         </View>
         <Text className="text-3xl font-bold mb-3 text-center">Quên mật khẩu</Text>
         <Text className="text-sm text-[#64748B] mb-8 text-center">
@@ -88,7 +88,6 @@ const ForgotPassword = () => {
           className="flex-row gap-1 mt-6 flex mx-auto"
           onPress={() => router.push(ERouteTable.SIGIN_IN)}
         >
-          <Text className="font-light">{'<'}</Text>
           <Text className="text-[#1E293B] text-sm font-semibold">Quay lại đăng nhập</Text>
         </TouchableOpacity>
       </View>

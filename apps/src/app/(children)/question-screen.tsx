@@ -5,7 +5,8 @@ import {
   View,
   Text,
   ActivityIndicator,
-  ImageBackground, Platform,
+  ImageBackground,
+  Platform,
 } from 'react-native'
 import React, { useState } from 'react'
 import { AntDesign } from '@expo/vector-icons'
@@ -24,7 +25,7 @@ const QuestionScreen = () => {
   const [answers, setAnswers] = useState<{ questionId: number; answerIds: number[] }[]>([])
   const { coursesId, type } = useLocalSearchParams<{ coursesId: string; type: string }>()
   const { quizQuery, submitQuiz } = useQuestion(coursesId, Number(type))
-  const isAndroid = Platform.OS === 'android';
+  const isAndroid = Platform.OS === 'android'
 
   const currentQuestion = quizQuery.data?.questions[currentQuestionIndex]
 
@@ -75,7 +76,7 @@ const QuestionScreen = () => {
   if (quizQuery.isLoading) {
     return (
       <SafeAreaView className="bg-white h-full flex-1 items-center justify-center">
-        <ActivityIndicator size="large" color="#734DBE" />
+        <ActivityIndicator size="large" color="#36BF9F" />
       </SafeAreaView>
     )
   }
@@ -133,7 +134,7 @@ const QuestionScreen = () => {
         </View>
         <View className="px-4 mb-10">
           <TouchableOpacity
-            className="bg-[#662DEC] py-3 px-6 rounded-full"
+            className="bg-primary-main py-3 px-6 rounded-full"
             onPress={() => router.push(ERouteTable.HOME)}
           >
             <Text className="text-white text-center font-semibold text-lg">Trở lại trang chủ</Text>
@@ -158,7 +159,7 @@ const QuestionScreen = () => {
       </View>
 
       <ScrollView className="flex-1 px-4">
-        <Text className="text-2xl mt-4 text-[#734DBE] text-center font-semibold">
+        <Text className="text-2xl mt-4 text-primary-main text-center font-semibold">
           Câu {currentQuestionIndex + 1}
         </Text>
         <Text className="text-lg font-medium mb-6 text-center">{currentQuestion?.text}</Text>
@@ -171,7 +172,7 @@ const QuestionScreen = () => {
             className={`border rounded-lg p-4 mb-4 ${
               selectedAnswer === answer.id
                 ? isProcessing
-                  ? 'border-[#734DBE] bg-[#734DBE]'
+                  ? 'border-primary-main bg-primary-main'
                   : answer.isCorrect
                     ? 'border-[#21C45D] bg-[#21C45D]'
                     : 'border-[#F44336] bg-[#F44336]'
@@ -209,7 +210,7 @@ const QuestionScreen = () => {
       <View className="p-4 border-t border-gray-200">
         <TouchableOpacity
           className={`py-3 rounded-lg ${
-            selectedAnswer !== null && showFeedback ? 'bg-[#662DEC]' : 'bg-[#662DEC]/50'
+            selectedAnswer !== null && showFeedback ? 'bg-primary-main' : 'bg-primary-main/50'
           }`}
           onPress={handleNextQuestion}
           disabled={selectedAnswer === null || !showFeedback}

@@ -7,6 +7,7 @@ import IconArrowRight from '~/assets/icon-svg/IconArrowRight'
 import { router } from 'expo-router'
 import { ERouteTable } from '@/constants/route-table'
 import { useSettings } from '@/hooks/useSettings'
+import AppHeader from '@/components/common/AppHeader'
 
 export default function PracticeScreen() {
   const [activeState, setActiveState] = useState('Cơ bản')
@@ -40,24 +41,7 @@ export default function PracticeScreen() {
   return (
     <ImageBackground source={images.bgPractice} resizeMode="cover" className="h-full">
       <View className="mt-20 mx-4 flex-1">
-        <View className="flex-row justify-between w-full items-center">
-          <Image
-            source={{
-              uri:
-                userQuery?.data?.avatar ??
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoExoFiajbHD5Yxg0Bj2T9Wh2WfTRFAsdhSw&s',
-            }}
-            className="w-[48px] h-[48px] rounded-full"
-            resizeMode="cover"
-          />
-          <Text className="text-white font-semibold text-lg">Trò chơi</Text>
-          <TouchableOpacity
-            onPress={() => router.push(ERouteTable.SETTING_SCREEN)}
-            className="w-[48px] h-[48px] bg-[#64748B14] items-center justify-center rounded-full"
-          >
-            <IconSetting />
-          </TouchableOpacity>
-        </View>
+        <AppHeader title="Trò chơi" />
       </View>
       <View className="mx-4 mb-8">
         <View className="flex-row w-full items-center justify-center">
@@ -71,10 +55,10 @@ export default function PracticeScreen() {
                 params: { level: renderState() },
               })
             }}
-            className="bg-[#662DEC] mx-8 h-[58px] w-[150px] items-center justify-center rounded-full"
+            className="bg-primary-main mx-8 h-[58px] w-[150px] items-center justify-center rounded-full"
           >
-            <Text className="text-white opacity-[48%]">Độ khó</Text>
-            <Text className="text-white mt-1 font-semibold">{activeState}</Text>
+            <Text className="text-white">Độ khó</Text>
+            <Text className="text-white text-xl  mt-1 font-bold">{activeState}</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={handleNextLevel}>
             <IconArrowRight />

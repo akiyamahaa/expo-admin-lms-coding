@@ -27,12 +27,12 @@ const QuizStart = () => {
             <AntDesign name="left" size={24} color="black" />
           </TouchableOpacity>
           <Text className="capitalize font-semibold text-lg flex-1 mr-10 mt-2 text-center">
-            Trắc Nghiệm {title}
+            {title}
           </Text>
         </View>
         <View className="items-center mt-[50vh]">
           <Text className="text-lg font-semibold">{titleLesson}</Text>
-          <Text className="text-3xl text-[#885BF0] mt-2 font-semibold">
+          <Text className="text-3xl text-primary-main mt-2 font-semibold">
             {Number(score) > 0 ? 'Điểm cao nhất' : 'Ai cũng có lần đầu'}
           </Text>
           {Number(score) > 0 && (
@@ -47,7 +47,7 @@ const QuizStart = () => {
       </View>
       <View className="mb-12 px-4">
         <TouchableOpacity
-          className="bg-[#885BF0] h-12 rounded-full items-center justify-center"
+          className="bg-primary-main h-12 rounded-full items-center justify-center"
           onPress={() =>
             router.push({
               pathname: ERouteTable.QUESTION_SCREEN,

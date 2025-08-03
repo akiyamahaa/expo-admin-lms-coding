@@ -3,7 +3,9 @@ import {
   Dimensions,
   Image,
   ImageBackground,
+  SafeAreaView,
   ScrollView,
+  StatusBar,
   Text,
   TouchableOpacity,
   View,
@@ -220,33 +222,42 @@ const DetailLesson = () => {
   }
 
   return (
-    <View className="flex-1 h-full bg-gray-50">
-      <View className="relative h-[310px]">
-        <Image
-          source={{
-            uri:
-              lessonQuery?.data?.image ||
-              'https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2024/11/26/Image-001-Chess-945x630.jpeg',
-          }}
-          className="w-full h-[310px] rounded-br-3xl rounded-bl-3xl"
-        />
-        <TouchableOpacity
-          onPress={() => router.back()}
-          className="h-12 w-12 rounded-full absolute top-20 left-4 bg-white items-center justify-center"
+    <View className="flex-1">
+      <StatusBar translucent backgroundColor={'transparent'} barStyle="light-content" />
+      <View>
+        <ImageBackground
+          className="h-[280px]"
+          source={
+            lessonQuery?.data?.image
+              ? {
+                  uri: lessonQuery?.data?.image,
+                }
+              : images.lessonDetail
+          }
         >
-          <Ionicons name="chevron-back" size={24} color="black" />
-        </TouchableOpacity>
-        <View className="absolute top-20 right-4">
-          <IconCheckLesson />
-        </View>
-        <View className="absolute bottom-12 left-4">
-          <Text className="text-[#FF9800] font-semibold capitalize">
-            {lessonQuery?.data?.category.title}
-          </Text>
-          <Text numberOfLines={1} className="text-xl text-white w-[70%] font-semibold">
-            {lessonQuery?.data?.title}
-          </Text>
-        </View>
+          <SafeAreaView className="flex-1">
+            <View className="flex-row justify-between items-center">
+              <TouchableOpacity
+                onPress={() => router.back()}
+                className="h-12 w-12 rounded-full bg-white items-center justify-center"
+              >
+                <Ionicons name="chevron-back" size={24} color="black" />
+              </TouchableOpacity>
+              <View className="">
+                <IconCheckLesson />
+              </View>
+            </View>
+
+            <View className="absolute bottom-12 left-4">
+              <Text className="text-[#FF9800] font-semibold capitalize">
+                {lessonQuery?.data?.category.title}
+              </Text>
+              <Text numberOfLines={1} className="text-xl text-white w-[70%] font-semibold">
+                {lessonQuery?.data?.title}
+              </Text>
+            </View>
+          </SafeAreaView>
+        </ImageBackground>
       </View>
 
       <ScrollView
@@ -285,7 +296,7 @@ const DetailLesson = () => {
       <View className="bg-white border border-gray-200 h-[94px] w-full rounded-tl-2xl rounded-tr-2xl shadow-lg">
         <View className="flex-row justify-center mt-6 gap-4">
           <TouchableOpacity
-            className={`py-3 w-[90%] items-center rounded-full shadow-md ${lessonQuery?.isLoading ? 'bg-gray-400' : 'bg-[#662DEC]'}`}
+            className={`py-3 w-[90%] items-center rounded-full shadow-md ${lessonQuery?.isLoading ? 'bg-gray-400' : 'bg-primary-main'}`}
             disabled={lessonQuery?.isLoading}
             onPress={() =>
               router.push({

@@ -21,7 +21,7 @@ export default function Root() {
 
   return (
     <View className="flex-1 justify-center items-center">
-      <StatusBar translucent backgroundColor={'transparent'} barStyle="light-content" />
+      <StatusBar translucent backgroundColor={'transparent'} barStyle="dark-content" />
       <Image source={images.splash} className="w-full h-full" />
     </View>
   )
