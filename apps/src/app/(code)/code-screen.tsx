@@ -5,15 +5,15 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
-  StyleSheet,
   ActivityIndicator,
   Dimensions,
   Platform,
 } from 'react-native'
 import { WebView } from 'react-native-webview'
-import Ionicons from '@expo/vector-icons/Ionicons'
+
 import { useRouter } from 'expo-router'
 import AppBackHeader from '@/components/common/AppBackHeader'
+import { StatusBar } from 'react-native'
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window')
 
@@ -82,7 +82,10 @@ export default function CodeScreen({ navigation }: { navigation: any }) {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-bg-secondary">
+    <SafeAreaView
+      className="flex-1 bg-bg-secondary"
+      style={{ paddingTop: StatusBar.currentHeight }}
+    >
       {/* Header */}
       <View className="px-6 flex-1">
         <AppBackHeader title="CODING TIME" />

@@ -7,6 +7,7 @@ import {
   ActivityIndicator,
   ImageBackground,
   Platform,
+  StatusBar,
 } from 'react-native'
 import React, { useState } from 'react'
 import { AntDesign } from '@expo/vector-icons'
@@ -75,7 +76,10 @@ const QuestionScreen = () => {
 
   if (quizQuery.isLoading) {
     return (
-      <SafeAreaView className="bg-white h-full flex-1 items-center justify-center">
+      <SafeAreaView
+        className="bg-white h-full flex-1 items-center justify-center"
+        style={{ paddingTop: StatusBar.currentHeight }}
+      >
         <ActivityIndicator size="large" color="#36BF9F" />
       </SafeAreaView>
     )
@@ -83,7 +87,10 @@ const QuestionScreen = () => {
 
   if (!quizQuery.data?.questions.length) {
     return (
-      <SafeAreaView className="bg-white h-full flex-1">
+      <SafeAreaView
+        className="bg-white h-full flex-1"
+        style={{ paddingTop: StatusBar.currentHeight }}
+      >
         <View className="flex-row flex items-center pb-2 relative mb-4">
           <TouchableOpacity
             onPress={() => router.back()}

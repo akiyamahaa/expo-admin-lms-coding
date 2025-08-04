@@ -46,7 +46,10 @@ const SettingsScreen = () => {
   }, [isFocused])
 
   return (
-    <SafeAreaView className="bg-white h-full relative flex-1">
+    <SafeAreaView
+      className="bg-white h-full relative flex-1"
+      style={{ paddingTop: StatusBar.currentHeight }}
+    >
       <View className={`flex-row flex items-center pb-2 relative mb-4 ${isAndroid && 'mt-20'}`}>
         <TouchableOpacity
           onPress={() => router.back()}

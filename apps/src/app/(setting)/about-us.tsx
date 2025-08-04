@@ -1,12 +1,23 @@
-import { Platform, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import {
+  Platform,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import { router } from 'expo-router'
 import { AntDesign } from '@expo/vector-icons'
 
 const AboutUs = () => {
-  const isAndroid = Platform.OS === 'android';
+  const isAndroid = Platform.OS === 'android'
 
   return (
-    <SafeAreaView className="bg-white h-full relative flex-1">
+    <SafeAreaView
+      className="bg-white h-full relative flex-1"
+      style={{ paddingTop: StatusBar.currentHeight }}
+    >
       <View className={`flex-row flex items-center pb-2 relative mb-4 ${isAndroid && 'mt-20'}`}>
         <TouchableOpacity
           onPress={() => router.back()}

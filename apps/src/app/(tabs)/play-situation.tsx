@@ -6,6 +6,7 @@ import {
   Dimensions,
   SafeAreaView,
   ImageBackground,
+  StatusBar,
 } from 'react-native'
 import { router, useRouter } from 'expo-router'
 import { ERouteTable } from '@/constants/route-table'
@@ -22,7 +23,7 @@ export default function LearnScreen() {
 
   return (
     <ImageBackground source={images.bgAuth} className="h-full flex-1">
-      <SafeAreaView className="flex-1 ">
+      <SafeAreaView className="flex-1" style={{ paddingTop: StatusBar.currentHeight }}>
         <HeaderSetting title="Thực hành" />
         <View className="flex-1 items-center justify-center px-6">
           {/* 1. Animation header */}

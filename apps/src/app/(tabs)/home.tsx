@@ -64,15 +64,15 @@ export default function HomeScreen() {
   const [activeTab, setActiveTab] = useState(1)
   const { categoriesQuery, learningItemsQuery } = useHome(activeTab)
   const isFocused = useIsFocused()
-  const queryClient = useQueryClient()
 
   useEffect(() => {
-    queryClient.invalidateQueries({ queryKey: ['categories'] })
-    queryClient.invalidateQueries({
-      queryKey: ['learningItems', categoriesQuery.data?.[0]?.id],
-    })
-    setActiveTab(categoriesQuery.data?.[0]?.id!)
-  }, [isFocused])
+    if (isFocused && categoriesQuery.data && categoriesQuery.data.length > 0) {
+      setActiveTab((prev) => {
+        if (!prev) return categoriesQuery.data![0].id
+        return prev
+      })
+    }
+  }, [isFocused, categoriesQuery.data])
 
   const currentCategory = categoriesQuery.data?.find((it) => it.id === activeTab)
 
@@ -98,14 +98,16 @@ export default function HomeScreen() {
         <View className="mt-4 flex-row items-center justify-between">
           <Text className="text-2xl font-bold">Bài học mới</Text>
         </View>
-        <View className="rounded-3xl overflow-hidden my-4">
-          <ImageBackground source={images.bgProgress} className="p-5">
-            <Text className="text-primary text-xl">Tiến độ</Text>
-            <Text className="text-primary text-3xl font-bold">
-              {currentCategory?.completedCourses}/{currentCategory?.totalCourses}
-            </Text>
-          </ImageBackground>
-        </View>
+        {currentCategory && (
+          <View className="rounded-3xl overflow-hidden my-4">
+            <ImageBackground source={images.bgProgress} className="p-5">
+              <Text className="text-primary text-xl">Tiến độ</Text>
+              <Text className="text-primary text-3xl font-bold">
+                {currentCategory.completedCourses}/{currentCategory.totalCourses}
+              </Text>
+            </ImageBackground>
+          </View>
+        )}
         {learningItemsQuery.isLoading ? (
           <ActivityIndicator size="small" color="#36BF9F" className="mt-8" />
         ) : (

@@ -1,4 +1,12 @@
-import { Image, Platform, SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
+import {
+  Image,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import { router } from 'expo-router'
 import { AntDesign } from '@expo/vector-icons'
 import { images } from '@/constants'
@@ -7,7 +15,10 @@ const Support = () => {
   const isAndroid = Platform.OS === 'android'
 
   return (
-    <SafeAreaView className="bg-white h-full relative flex-1">
+    <SafeAreaView
+      className="bg-white h-full relative flex-1"
+      style={{ paddingTop: StatusBar.currentHeight }}
+    >
       <View className={`flex-row flex items-center pb-2 relative mb-4 ${isAndroid && 'mt-20'}`}>
         <TouchableOpacity
           onPress={() => router.back()}
@@ -23,7 +34,7 @@ const Support = () => {
           <View className="flex-row items-center justify-between mt-6">
             <View>
               <Text className="text-white opacity-[48%] text-sm">Email</Text>
-              <Text className="text-white">demo@finkids.cc</Text>
+              <Text className="text-white">demo@codeplanet.cc</Text>
             </View>
             <AntDesign className="opacity-[48%]" name="right" size={16} color="#FFFFFF" />
           </View>

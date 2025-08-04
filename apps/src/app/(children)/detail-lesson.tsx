@@ -235,7 +235,9 @@ const DetailLesson = () => {
               : images.lessonDetail
           }
         >
-          <SafeAreaView className="flex-1">
+          {/* Overlay */}
+          <View className="absolute inset-0 bg-gray-800/50" />
+          <SafeAreaView className="flex-1" style={{ paddingTop: StatusBar.currentHeight }}>
             <View className="flex-row justify-between items-center px-4">
               <TouchableOpacity
                 onPress={() => router.back()}
@@ -248,11 +250,11 @@ const DetailLesson = () => {
               </View>
             </View>
 
-            <View className="absolute bottom-12 left-4">
-              <Text className="text-[#FF9800] font-semibold capitalize">
+            <View className="absolute bottom-4 left-4">
+              <Text className="text-green-400 font-semibold capitalize text-xl">
                 {lessonQuery?.data?.category.title}
               </Text>
-              <Text numberOfLines={1} className="text-xl text-white w-[70%] font-semibold">
+              <Text numberOfLines={2} className="text-xl text-white w-[100%] font-semibold">
                 {lessonQuery?.data?.title}
               </Text>
             </View>
