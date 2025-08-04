@@ -11,21 +11,21 @@ type Props = {
 const ChessControls: React.FC<Props> = ({ onReset, onIncrease, onDecrease, disabled }) => (
   <View className="flex-row justify-center space-x-4 mt-4">
     <TouchableOpacity
-      className="bg-[#734DBE] px-4 py-2 rounded-lg"
+      className="bg-[#36BF9F] px-4 py-2 rounded-lg"
       onPress={onReset}
       disabled={disabled}
     >
       <Text className="text-white">Chơi lại</Text>
     </TouchableOpacity>
     <TouchableOpacity
-      className="bg-[#734DBE] px-4 py-2 rounded-lg"
+      className="bg-[#36BF9F] px-4 py-2 rounded-lg"
       onPress={onIncrease}
       disabled={disabled}
     >
       <Text className="text-white">Tăng độ khó</Text>
     </TouchableOpacity>
     <TouchableOpacity
-      className="bg-[#734DBE] px-4 py-2 rounded-lg"
+      className="bg-[#36BF9F] px-4 py-2 rounded-lg"
       onPress={onDecrease}
       disabled={disabled}
     >

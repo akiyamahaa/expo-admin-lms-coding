@@ -78,7 +78,7 @@ const SettingsScreen = () => {
 
       {/* Stats Section */}
       <View className="mx-4 space-y-4 mt-12">
-        <View className="flex-row justify-between bg-[#734DBE14] px-5 py-4 rounded-2xl border border-[#734DBE1F]">
+        <View className="flex-row justify-between bg-[#36BF9F14] px-5 py-4 rounded-2xl border border-[#36BF9F1F]">
           <View className="flex-row items-center gap-1">
             <IconPracticeSetting />
             <Text className="text-[#1E293B] font-semibold ml-1">Thực hành</Text>
@@ -92,7 +92,7 @@ const SettingsScreen = () => {
             </Text>
           </View>
         </View>
-        <View className="flex-row justify-between bg-[#734DBE14] px-5 py-4 rounded-2xl border border-[#734DBE1F] mt-2">
+        <View className="flex-row justify-between bg-[#36BF9F14] px-5 py-4 rounded-2xl border border-[#36BF9F1F] mt-2">
           <View className="flex-row items-center gap-1">
             <IconBook />
             <Text className="text-[#1E293B] font-semibold ml-1">Học tập</Text>
@@ -159,7 +159,7 @@ const SettingsScreen = () => {
         </View>
 
         {/* Đăng xuất */}
-        <TouchableOpacity className="bg-[#734DBE] py-4 rounded-xl mt-20" onPress={onSignOut}>
+        <TouchableOpacity className="bg-[#36BF9F] py-4 rounded-xl mt-20" onPress={onSignOut}>
           <Text className="text-white font-semibold text-center">Đăng xuất</Text>
         </TouchableOpacity>
       </View>

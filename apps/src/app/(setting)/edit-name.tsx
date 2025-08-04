@@ -19,7 +19,7 @@ type FormData = {
 const EditName = () => {
   const { user } = useAuthStore()
   const { updateNameMutation } = useSettings()
-  const isAndroid = Platform.OS === 'android';
+  const isAndroid = Platform.OS === 'android'
 
   const {
     register,
@@ -67,7 +67,7 @@ const EditName = () => {
       </View>
       <View className="w-full absolute bottom-10 items-center">
         <TouchableOpacity
-          className="bg-[#734DBE] w-11/12 rounded-3xl h-14 justify-center"
+          className="bg-[#36BF9F] w-11/12 rounded-3xl h-14 justify-center"
           onPress={handleSubmit(onSubmit)}
           disabled={updateNameMutation.isPending}
         >

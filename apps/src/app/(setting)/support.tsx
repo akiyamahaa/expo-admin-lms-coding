@@ -4,7 +4,7 @@ import { AntDesign } from '@expo/vector-icons'
 import { images } from '@/constants'
 
 const Support = () => {
-  const isAndroid = Platform.OS === 'android';
+  const isAndroid = Platform.OS === 'android'
 
   return (
     <SafeAreaView className="bg-white h-full relative flex-1">
@@ -18,7 +18,7 @@ const Support = () => {
         <Text className="font-bold text-[#1E293B] text-xl m-auto">Hỗ trợ</Text>
       </View>
       <View className="px-4 mt-10">
-        <View className="p-5 bg-[#734DBE] rounded-2xl">
+        <View className="p-5 bg-[#36BF9F] rounded-2xl">
           <Text className="text-white font-semibold">Liên hệ hỗ trợ</Text>
           <View className="flex-row items-center justify-between mt-6">
             <View>

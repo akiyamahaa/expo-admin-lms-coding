@@ -118,7 +118,7 @@ const DetailLesson = () => {
       elevation: 5,
     },
     th: {
-      backgroundColor: '#734DBE',
+      backgroundColor: '#36BF9F',
       color: '#ffffff',
       fontWeight: 'bold' as const,
       fontSize: 14,
@@ -142,7 +142,7 @@ const DetailLesson = () => {
       verticalAlign: 'top' as const,
     },
     thead: {
-      backgroundColor: '#734DBE',
+      backgroundColor: '#36BF9F',
     },
     tbody: {
       backgroundColor: '#ffffff',
@@ -193,7 +193,7 @@ const DetailLesson = () => {
       elevation: 5,
     },
     th: {
-      backgroundColor: '#734DBE',
+      backgroundColor: '#36BF9F',
       color: '#ffffff',
       fontWeight: 'bold' as const,
       fontSize: 14,
@@ -217,7 +217,7 @@ const DetailLesson = () => {
       borderBottomColor: '#e5e7eb',
     },
     thead: {
-      backgroundColor: '#734DBE',
+      backgroundColor: '#36BF9F',
     },
   }
 
@@ -236,7 +236,7 @@ const DetailLesson = () => {
           }
         >
           <SafeAreaView className="flex-1">
-            <View className="flex-row justify-between items-center">
+            <View className="flex-row justify-between items-center px-4">
               <TouchableOpacity
                 onPress={() => router.back()}
                 className="h-12 w-12 rounded-full bg-white items-center justify-center"
@@ -269,7 +269,7 @@ const DetailLesson = () => {
           {lessonQuery?.isLoading ? (
             <View className="space-y-4">
               <View className="flex-row justify-center items-center mt-8 py-8">
-                <ActivityIndicator size="large" color="#734DBE" />
+                <ActivityIndicator size="large" color="#36BF9F" />
                 <Text className="ml-3 text-gray-500 text-base">Đang tải nội dung...</Text>
               </View>
             </View>

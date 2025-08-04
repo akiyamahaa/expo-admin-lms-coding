@@ -17,7 +17,7 @@ const ItemLevelChess: React.FC<ItemLevelChessProps> = ({ data, onPress }: ItemLe
   return (
     <TouchableOpacity
       onPress={onPress}
-      className="flex-row justify-between bg-[#734DBE] mb-2 px-3.5 py-5 items-center rounded-xl"
+      className="flex-row justify-between bg-[#36BF9F] mb-2 px-3.5 py-5 items-center rounded-xl"
     >
       <Text className="text-white text-xl font-semibold">{data.level}</Text>
       <View className="flex-row gap-1">

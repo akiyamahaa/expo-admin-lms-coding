@@ -21,7 +21,7 @@ export default function LearnScreen() {
   const router = useRouter()
 
   return (
-    <ImageBackground source={images.bgPlayChess} className="h-full flex-1">
+    <ImageBackground source={images.bgAuth} className="h-full flex-1">
       <SafeAreaView className="flex-1 ">
         <HeaderSetting title="Thực hành" />
         <View className="flex-1 items-center justify-center px-6">
@@ -45,7 +45,7 @@ export default function LearnScreen() {
           </Text>
 
           <TouchableOpacity
-            className="bg-blue-500 py-3 px-8 rounded-full shadow-md"
+            className="bg-primary-main py-3 px-8 rounded-full shadow-sm"
             activeOpacity={0.8}
             onPress={() => router.push(ERouteTable.CODE_SCREEN)}
           >

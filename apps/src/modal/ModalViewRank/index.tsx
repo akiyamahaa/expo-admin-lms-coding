@@ -14,7 +14,7 @@ export default function ModalViewRank({ onClose, visible, data }: IModalSelectMo
   const renderColor = (index: number) => {
     switch (index) {
       case 0:
-        return '#734DBE'
+        return '#36BF9F'
       case 1:
         return '#D14EA8'
       case 2:
@@ -26,7 +26,7 @@ export default function ModalViewRank({ onClose, visible, data }: IModalSelectMo
 
   return (
     <ModalComponent onClose={onClose} visible={visible}>
-      <Text className="mt-6 text-center font-semibold text-xl text-[#734DBE]">Bảng xếp hạng</Text>
+      <Text className="mt-6 text-center font-semibold text-xl text-[#36BF9F]">Bảng xếp hạng</Text>
       <ScrollView className="mt-4">
         {data && data.length > 0 ? (
           data.map((it, index) => {
@@ -38,7 +38,7 @@ export default function ModalViewRank({ onClose, visible, data }: IModalSelectMo
                 <View className="flex-row items-center gap-4">
                   <View
                     style={{ backgroundColor: renderColor(index) }}
-                    className="w-6 h-6 rounded bg-[#734DBE] items-center justify-center"
+                    className="w-6 h-6 rounded bg-[#36BF9F] items-center justify-center"
                   >
                     <Text className="text-xs font-semibold text-white">#{index + 1}</Text>
                   </View>

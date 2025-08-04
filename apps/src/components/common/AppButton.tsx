@@ -12,7 +12,7 @@ const AppButton = ({ title, textStyle = 'text-white', disabled, className, ...pr
     <TouchableOpacity
       activeOpacity={0.7}
       className={clsx(
-        'bg-primary-main w-full rounded-full min-h-12 justify-center items-center',
+        'bg-primary-main w-full rounded-full min-h-12 justify-center items-center shadow-sm',
         className,
       )}
       {...props}

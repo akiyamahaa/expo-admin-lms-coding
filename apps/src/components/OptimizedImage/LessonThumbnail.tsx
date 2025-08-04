@@ -49,7 +49,7 @@ const LessonThumbnail: React.FC<LessonThumbnailProps> = ({
           className={`absolute inset-0 ${className} bg-gray-200 items-center justify-center rounded-3xl`}
         >
           <View className="animate-pulse">
-            <ActivityIndicator size="small" color="#734DBE" />
+            <ActivityIndicator size="small" color="#36BF9F" />
           </View>
         </View>
       )}

@@ -137,11 +137,11 @@ const VerifyAccount = () => {
           disabled={!canResend || isLoading}
         >
           {isLoading ? (
-            <ActivityIndicator size="small" color="#734DBE" />
+            <ActivityIndicator size="small" color="#36BF9F" />
           ) : !canResend ? (
-            <Text className="text-[#734DBE] font-semibold">{countdown}S</Text>
+            <Text className="text-[#36BF9F] font-semibold">{countdown}S</Text>
           ) : (
-            <Text className="text-[#734DBE] font-semibold">Gửi lại</Text>
+            <Text className="text-[#36BF9F] font-semibold">Gửi lại</Text>
           )}
         </TouchableOpacity>
 

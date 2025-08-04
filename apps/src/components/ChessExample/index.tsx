@@ -197,9 +197,9 @@ const ChessExample = ({ setNoti }: IChessExampleProps) => {
 
   const getSquareClassName = (rowIndex: number, colIndex: number) => {
     const baseClasses = 'flex-1 items-center justify-center'
-    const colorClass = (rowIndex + colIndex) % 2 === 0 ? 'bg-[#734DBE]' : 'bg-[#e2cbf7]'
+    const colorClass = (rowIndex + colIndex) % 2 === 0 ? 'bg-[#36BF9F]' : 'bg-[#e2cbf7]'
     const selectedClass =
-      selectedPiece?.row === rowIndex && selectedPiece?.col === colIndex ? 'bg-[#734DBE]' : ''
+      selectedPiece?.row === rowIndex && selectedPiece?.col === colIndex ? 'bg-[#36BF9F]' : ''
 
     // Thêm class cho vị trí gợi ý
     const hintClass =
@@ -234,7 +234,7 @@ const ChessExample = ({ setNoti }: IChessExampleProps) => {
           {/* Số hàng 8-1 */}
           <View className="w-6 justify-around">
             {[8, 7, 6, 5, 4, 3, 2, 1].map((num) => (
-              <Text key={num} className="text-[#734DBE] text-sm font-semibold text-center mb-8">
+              <Text key={num} className="text-[#36BF9F] text-sm font-semibold text-center mb-8">
                 {num}
               </Text>
             ))}
@@ -261,7 +261,7 @@ const ChessExample = ({ setNoti }: IChessExampleProps) => {
         <View className="flex-row ml-6">
           {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].map((col, index) => (
             <View key={col} className="flex-1 items-start">
-              <Text className="font-semibold text-sm text-[#734DBE]">{col}</Text>
+              <Text className="font-semibold text-sm text-[#36BF9F]">{col}</Text>
             </View>
           ))}
         </View>
@@ -274,7 +274,7 @@ const ChessExample = ({ setNoti }: IChessExampleProps) => {
             <Text className="text-[#64748B] mt-1">Gợi ý</Text>
           </TouchableOpacity>
           {hasMoved && (
-            <TouchableOpacity className="bg-[#734DBE] py-2.5 px-10 rounded-xl">
+            <TouchableOpacity className="bg-[#36BF9F] py-2.5 px-10 rounded-xl">
               <Text className="text-white font-semibold">Tiếp tục</Text>
             </TouchableOpacity>
           )}

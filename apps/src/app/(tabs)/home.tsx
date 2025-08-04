@@ -107,7 +107,7 @@ export default function HomeScreen() {
           </ImageBackground>
         </View>
         {learningItemsQuery.isLoading ? (
-          <ActivityIndicator size="small" color="#734DBE" className="mt-8" />
+          <ActivityIndicator size="small" color="#36BF9F" className="mt-8" />
         ) : (
           <FlatList
             columnWrapperStyle={{ justifyContent: 'space-around' }}

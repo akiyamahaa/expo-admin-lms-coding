@@ -16,7 +16,7 @@ const PlayRandom = (props: SvgProps) => (
     {...props}
   >
     <Path
-      fill="#734DBE"
+      fill="#36BF9F"
       d="M0 10C0 4.477 4.477 0 10 0h285c5.523 0 10 4.477 10 10v28c0 5.523-4.477 10-10 10H10C4.477 48 0 43.523 0 38V10Z"
     />
     <Path

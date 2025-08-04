@@ -13,6 +13,7 @@ import {
 import { WebView } from 'react-native-webview'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { useRouter } from 'expo-router'
+import AppBackHeader from '@/components/common/AppBackHeader'
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window')
 
@@ -81,65 +82,62 @@ export default function CodeScreen({ navigation }: { navigation: any }) {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-100">
+    <SafeAreaView className="flex-1 bg-bg-secondary">
       {/* Header */}
-      <View className="flex-row items-center p-4 shadow-md">
-        <TouchableOpacity onPress={() => router.back()} className="mr-4">
-          <Ionicons name="arrow-back" size={24} color="#333" />
-        </TouchableOpacity>
-        <Text className="text-lg font-semibold text-gray-800">CODING TIME</Text>
-      </View>
+      <View className="px-6 flex-1">
+        <AppBackHeader title="CODING TIME" />
 
-      <Text className="text-base font-semibold ml-4 mt-4">Nhập code Python:</Text>
+        <Text className="text-base font-semibold mt-4">Nhập code Python:</Text>
 
-      <View
-        className="rounded-lg overflow-hidden mx-4 mt-2 bg-white"
-        style={{
-          height: SCREEN_HEIGHT * 0.3,
-          ...(Platform.OS === 'ios'
-            ? {
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 2 },
-                shadowOpacity: 0.1,
-                shadowRadius: 4,
-              }
-            : { elevation: 3 }),
-        }}
-      >
-        <WebView
-          ref={webviewRef}
-          originWhitelist={['*']}
-          source={{ html: editorHtml }}
-          onMessage={(event) => setCode(event.nativeEvent.data)}
-          javaScriptEnabled
-          style={{ backgroundColor: 'transparent' }}
-          automaticallyAdjustContentInsets={false}
-          scrollEnabled={false}
-        />
-      </View>
-
-      <TouchableOpacity
-        className="bg-blue-500 mx-4 mt-4 py-3 rounded-lg items-center"
-        onPress={runCode}
-        disabled={loading}
-      >
-        <Text className="text-white text-base font-semibold">Chạy code</Text>
-      </TouchableOpacity>
-
-      {loading && <ActivityIndicator className="my-4" />}
-
-      <Text className="text-base font-semibold ml-4 mt-4">Kết quả:</Text>
-
-      <ScrollView className="flex-1 mx-4 my-4 border border-gray-300 rounded-lg bg-white p-3">
-        <Text
+        <View
+          className="rounded-lg overflow-hidden mt-2 bg-white"
           style={{
-            fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace',
+            height: SCREEN_HEIGHT * 0.3,
+            ...(Platform.OS === 'ios'
+              ? {
+                  shadowColor: '#000',
+                  shadowOffset: { width: 0, height: 2 },
+                  shadowOpacity: 0.1,
+                  shadowRadius: 4,
+                }
+              : { elevation: 3 }),
           }}
-          className="text-sm text-gray-800"
         >
-          {output}
-        </Text>
-      </ScrollView>
+          <WebView
+            ref={webviewRef}
+            originWhitelist={['*']}
+            source={{ html: editorHtml }}
+            onMessage={(event) => setCode(event.nativeEvent.data)}
+            javaScriptEnabled
+            style={{ backgroundColor: 'transparent' }}
+            automaticallyAdjustContentInsets={false}
+            scrollEnabled={false}
+          />
+        </View>
+
+        <TouchableOpacity
+          className="bg-primary-main mt-4 py-3 rounded-lg items-center"
+          onPress={runCode}
+          disabled={loading}
+        >
+          <Text className="text-white text-base font-semibold">Chạy code</Text>
+        </TouchableOpacity>
+
+        {loading && <ActivityIndicator className="my-4" />}
+
+        <Text className="text-base font-semibold ml-4 mt-4">Kết quả:</Text>
+
+        <ScrollView className="flex-1 my-4 border border-gray-300 rounded-lg bg-white p-3">
+          <Text
+            style={{
+              fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace',
+            }}
+            className="text-sm text-gray-800"
+          >
+            {output}
+          </Text>
+        </ScrollView>
+      </View>
     </SafeAreaView>
   )
 }

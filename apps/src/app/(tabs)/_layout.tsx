@@ -12,7 +12,7 @@ const TabsLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#734DBE',
+        tabBarActiveTintColor: '#36BF9F',
         tabBarInactiveTintColor: '#64748B',
         tabBarStyle: {
           borderWidth: 1,
@@ -36,7 +36,7 @@ const TabsLayout = () => {
         options={{
           title: 'Khám phá',
           tabBarIcon: ({ color }) => (
-            <View>{color === '#734DBE' ? <IconHomeActive /> : <IconHome />}</View>
+            <View>{color === '#36BF9F' ? <IconHomeActive /> : <IconHome />}</View>
           ),
         }}
       />
@@ -45,7 +45,7 @@ const TabsLayout = () => {
         options={{
           title: 'Trắc nghiệm',
           tabBarIcon: ({ color }) => (
-            <View>{color === '#734DBE' ? <IconPractiveActive /> : <IconPractive />}</View>
+            <View>{color === '#36BF9F' ? <IconPractiveActive /> : <IconPractive />}</View>
           ),
         }}
       />
@@ -55,8 +55,8 @@ const TabsLayout = () => {
           title: 'Trò chơi',
           tabBarIcon: ({ color }) => (
             <View>
-              {color === '#734DBE' ? (
-                <CodeCircle size="24" variant="Broken" color="#734DBE" />
+              {color === '#36BF9F' ? (
+                <CodeCircle size="24" variant="Broken" color="#36BF9F" />
               ) : (
                 <CodeCircle size="24" variant="Broken" color="#64748B" />
               )}
@@ -69,7 +69,7 @@ const TabsLayout = () => {
         options={{
           title: 'Xếp hạng',
           tabBarIcon: ({ color }) => (
-            <View>{color === '#734DBE' ? <IconRankActive /> : <IconRank />}</View>
+            <View>{color === '#36BF9F' ? <IconRankActive /> : <IconRank />}</View>
           ),
         }}
       />

@@ -30,7 +30,7 @@ const ChessBoard: React.FC<Props> = ({
           const square = (files[colIndex] + ranks[rowIndex]) as Square
           const isLight = (rowIndex + colIndex) % 2 === 0
           const base = 'flex-1 items-center justify-center'
-          const colorClass = isLight ? 'bg-[#734DBE]' : 'bg-[#e2cbf7]'
+          const colorClass = isLight ? 'bg-[#36BF9F]' : 'bg-[#e2cbf7]'
           const selectedClass = selected === square ? 'border-2 border-yellow-400' : ''
           const lastClass =
             lastMove && (square === lastMove.from || square === lastMove.to)

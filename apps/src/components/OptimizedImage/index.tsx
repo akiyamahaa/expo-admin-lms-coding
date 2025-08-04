@@ -74,7 +74,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
           className="absolute inset-0 items-center justify-center"
           style={{ backgroundColor: placeholderColor }}
         >
-          <ActivityIndicator size="small" color="#734DBE" />
+          <ActivityIndicator size="small" color="#36BF9F" />
         </View>
       )}
 
